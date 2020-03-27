@@ -1,0 +1,11 @@
+port: 8000
+
+auth:
+  signing_key: "your_signing_key"
+  hash_salt: "your_hash_salt"
+  token_ttl: 86400
+
+mongo:
+  uri: "mongodb://auth-mongo:27017"
+  name: "authorizer"
+  collection: "users"
