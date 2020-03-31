@@ -53,7 +53,7 @@ func (a *Authorizer) SignIn(ctx context.Context, user *models.User) (string, err
 			ExpiresAt: jwt.At(time.Now().Add(a.expireDuration)),
 			IssuedAt:  jwt.At(time.Now()),
 		},
-		User: user,
+		Username: user.Username,
 	})
 
 	return token.SignedString(a.signingKey)
